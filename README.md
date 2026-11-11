@@ -10,8 +10,9 @@ A robust, enterprise-grade, beginner-friendly financial transaction integrity pl
 
 The system provides guaranteed ledger consistency, zero-client-trust authorization, race condition elimination, deterministic deadlock prevention, and immutable audit logging for all banking operations.
 
+- **Live Frontend Demo**: [https://mohithpilla.github.io/Snovasys/](https://mohithpilla.github.io/Snovasys/)
 - **GitHub Repository**: [https://github.com/MohithPilla/Snovasys.git](https://github.com/MohithPilla/Snovasys.git)
-- **Deployment Blueprint**: Dockerized for Render, Railway, AWS, or local execution.
+- **1-Click Cloud Deployment (Render Blueprint)**: [Deploy on Render](https://dashboard.render.com/blueprints?repo=https%3A%2F%2Fgithub.com%2FMohithPilla%2FSnovasys)
 
 ---
 
