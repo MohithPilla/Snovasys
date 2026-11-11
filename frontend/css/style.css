@@ -1,0 +1,138 @@
+/* Modern Corporate Banking Theme - White & Blue */
+:root {
+  --bank-primary: #0a4da2;
+  --bank-primary-dark: #073570;
+  --bank-primary-light: #e8f1fc;
+  --bank-accent: #00a86b;
+  --bank-accent-danger: #dc3545;
+  --bank-accent-warning: #ffc107;
+  --bank-bg: #f8fafc;
+  --bank-card-bg: #ffffff;
+  --bank-text-main: #1e293b;
+  --bank-text-muted: #64748b;
+  --bank-border: #e2e8f0;
+}
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  background-color: var(--bank-bg);
+  color: var(--bank-text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-bank {
+  background: linear-gradient(135deg, var(--bank-primary-dark) 0%, var(--bank-primary) 100%);
+  box-shadow: 0 4px 12px rgba(10, 77, 162, 0.15);
+}
+
+.navbar-bank .navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff !important;
+}
+
+.bank-card {
+  background: var(--bank-card-bg);
+  border: 1px solid var(--bank-border);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bank-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+.balance-card {
+  background: linear-gradient(135deg, var(--bank-primary) 0%, #1e60b8 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 10px 24px rgba(10, 77, 162, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.balance-card::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.btn-bank-primary {
+  background-color: var(--bank-primary);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.4rem;
+  transition: all 0.2s;
+}
+
+.btn-bank-primary:hover {
+  background-color: var(--bank-primary-dark);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.badge-active {
+  background-color: #d1fae5;
+  color: #065f46;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+}
+
+.badge-blocked {
+  background-color: #fee2e2;
+  color: #991b1b;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+}
+
+.badge-success-tx {
+  background-color: #ecfdf5;
+  color: #047857;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+}
+
+.badge-failed-tx {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+}
+
+.table th {
+  background-color: #f1f5f9;
+  color: var(--bank-text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  border-top: none;
+}
+
+.table td {
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+footer {
+  margin-top: auto;
+  background-color: #ffffff;
+  border-top: 1px solid var(--bank-border);
+  color: var(--bank-text-muted);
+  font-size: 0.875rem;
+}
