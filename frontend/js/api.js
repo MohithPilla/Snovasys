@@ -1,10 +1,24 @@
 /**
  * Secure Money Transfer System - API Client
  * Centralized fetch wrapper handling JWT authentication, headers, and error parsing.
- */
-const API_BASE = window.location.origin.includes(':8080')
-  ? '/api'
-  : (window.API_BASE_URL || 'http://localhost:8080/api');
+function getApiBase() {
+  return localStorage.getItem('snovasys_api_url')
+    || (window.location.origin.includes(':8080') ? '/api' : (window.API_BASE_URL || 'http://localhost:8080/api'));
+}
+
+function configureApiEndpoint() {
+  const current = getApiBase();
+  const input = prompt("Set Backend API URL (e.g., http://localhost:8080/api or https://your-backend.onrender.com/api):", current);
+  if (input !== null) {
+    if (input.trim() === '') {
+      localStorage.removeItem('snovasys_api_url');
+    } else {
+      localStorage.setItem('snovasys_api_url', input.trim().replace(/\/+$/, ''));
+    }
+    alert('Backend API Base URL set to: ' + getApiBase());
+    window.location.reload();
+  }
+}
 
 function getToken() {
   return localStorage.getItem('jwt_token');
@@ -57,7 +71,7 @@ async function apiFetch(endpoint, options = {}) {
     headers['Authorization'] = `Bearer ${token}`;
   }
 
-  const response = await fetch(`${API_BASE}${endpoint}`, {
+  const response = await fetch(`${getApiBase()}${endpoint}`, {
     ...options,
     headers
   });
