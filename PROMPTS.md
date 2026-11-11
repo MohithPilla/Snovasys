@@ -9,7 +9,7 @@ It details the initial prompts provided to the AI, the generated code, critical 
 ## Entry 1: Project Setup and Initial Entity Models
 - **Date**: November 5, 2026
 - **Phase**: Architecture & Domain Modeling
-- **Git Commit**: `feat: initial project structure and configuration` (`c01a7f1`)
+- **Git Commit**: `feat: initial project structure and configuration` (`0915074`)
 
 ### 1. Prompt Given to AI
 > "Create Spring Boot JPA entity models for `User` and `Account`. The account should have an account number and a balance field to store how much money the user has."
@@ -48,7 +48,7 @@ private BigDecimal balance = BigDecimal.ZERO.setScale(4, RoundingMode.HALF_UP);
 ## Entry 2: Money Transfer Endpoint & Broken Object-Level Authorization (IDOR)
 - **Date**: November 7, 2026
 - **Phase**: Transaction Processing
-- **Git Commit**: `feat: secure money transfer service with concurrency locking and idempotency` (`e42b892`)
+- **Git Commit**: `feat: secure money transfer service with concurrency locking and idempotency` (`0ad6686`)
 
 ### 1. Prompt Given to AI
 > "Create a Spring Boot REST controller and service for money transfers. The request should take the sender's account ID, recipient's account ID, and the amount to transfer."
@@ -92,7 +92,7 @@ TransferResponse response = transferService.transfer(
 ## Entry 3: Race Conditions, Double-Spending & Deadlock Prevention
 - **Date**: November 9, 2026
 - **Phase**: Concurrency & Transaction Integrity
-- **Git Commit**: `feat: database entities and repositories with pessimistic locking` (`f8a9134`)
+- **Git Commit**: `feat: database entities and repositories with pessimistic locking` (`7703f90`)
 
 ### 1. Prompt Given to AI
 > "Write the logic inside `TransferService` to deduct money from the sender and add it to the receiver. Make sure the sender has sufficient balance before doing the transfer."
@@ -150,7 +150,7 @@ entityManager.refresh(secondLocked);
 ## Entry 4: JWT Authentication and Role Escalation
 - **Date**: November 10, 2026
 - **Phase**: Authentication & Authorization
-- **Git Commit**: `feat: authentication and authorization with Spring Security and JWT` (`b57c910`)
+- **Git Commit**: `feat: authentication and authorization with Spring Security and JWT` (`7ac13a7`)
 
 ### 1. Prompt Given to AI
 > "Implement JWT authentication in Spring Security so users can log in and access protected endpoints."
@@ -192,7 +192,7 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 ## Entry 5: Immutable Audit Logging & Transaction Rollback Vulnerability
 - **Date**: November 11, 2026
 - **Phase**: Audit Integrity & Oversight
-- **Git Commit**: `feat: immutable audit logging and admin oversight` (`d38e219`)
+- **Git Commit**: `feat: immutable audit logging and admin oversight` (`eb478b0`)
 
 ### 1. Prompt Given to AI
 > "Create an audit service that logs every transfer. Call it inside `TransferService` so we know when transfers happen."
