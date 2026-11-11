@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Account &mdash; Snovasys Secure Bank</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+
+  <nav class="navbar navbar-dark navbar-bank py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <i class="bi bi-shield-lock-fill fs-4 me-2 text-warning"></i>
+        <span>Snovasys Secure Bank</span>
+      </a>
+      <a href="login.html" class="btn btn-sm btn-outline-light">Already have an account? Sign In</a>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="card bank-card p-4">
+          <div class="text-center mb-4">
+            <h4 class="fw-bold mb-1">Create Bank Account</h4>
+            <p class="text-muted small">Register to instantly receive a unique 10-digit account and $1,000 demo funds</p>
+          </div>
+
+          <div id="authAlert" class="alert d-none"></div>
+
+          <form id="registerForm">
+            <div class="mb-3">
+              <label for="name" class="form-label small fw-semibold">Full Legal Name</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                <input type="text" class="form-control" id="name" placeholder="John Doe" required minlength="2">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label small fw-semibold">Email Address</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input type="email" class="form-control" id="email" placeholder="john@example.com" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label small fw-semibold">Password</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-key"></i></span>
+                <input type="password" class="form-control" id="password" placeholder="At least 6 characters" required minlength="6">
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="confirmPassword" class="form-label small fw-semibold">Confirm Password</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-check2-circle"></i></span>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter password" required minlength="6">
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-bank-primary w-100 py-2">
+              Create Account
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
